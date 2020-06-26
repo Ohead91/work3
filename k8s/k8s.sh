@@ -1,5 +1,10 @@
 deployname = $1
 
+if [ ${deployname} -eq 0]; then
+    echo 'input deploy name'
+    exit
+fi
+
 # pull image
 docker pull oheadlee/work3
 

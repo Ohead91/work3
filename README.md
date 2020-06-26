@@ -36,11 +36,17 @@ Step 3/4 : run apt install -y nginx
  ```
  ### run
  ```
-$ winpty docker run -it --name u1 --rm -v C:\\Users\\user\\work3:/work3 ubuntu
-root@4947c063aa53:/#
+$ winpty docker run -it --name u1 -v C:\\Users\\user\\work3:/work3 ubuntu
+root@16ac6253285f:/# apt install
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@16ac6253285f:/# apt install nginx
+Reading package lists... Done
+
  ```
  ### nginx 확인
-
  #### nginx 설치
 ```
 root@4947c063aa53:/# apt update
@@ -74,11 +80,19 @@ Building dependency tree
 Reading state information... Done
 The following additional packages will be installed:
 ```
-#### nginx 확인
+#### nginx 버전확인
 ```
 root@4947c063aa53:/# nginx -v
 nginx version: nginx/1.17.10 (Ubuntu)
+```
 
+#### nginx 실행확인
+```
+root@16ac6253285f:/#  ps -ef | grep nginx
+root      1016     1  0 16:32 ?        00:00:00 nginx: master process nginx
+www-data  1017  1016  0 16:32 ?        00:00:00 nginx: worker process
+www-data  1018  1016  0 16:32 ?        00:00:00 nginx: worker process
+root      1023     1  0 16:33 pts/0    00:00:00 grep --color=auto nginx
 ```
 
 
