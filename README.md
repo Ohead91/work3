@@ -35,8 +35,53 @@ Step 3/4 : run apt install -y nginx
  ---> Running in ee41345a8def
  ```
  ### run
- 
+ ```
+$ winpty docker run -it --name u1 --rm -v C:\\Users\\user\\work3:/work3 ubuntu
+root@4947c063aa53:/#
+ ```
  ### nginx 확인
+
+ #### nginx 설치
+```
+root@4947c063aa53:/# apt update
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [107 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:3 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [42.3 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [1077 B]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [147 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [30.9 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates InRelease [107 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-backports InRelease [98.3 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [31.0 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [143 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [1077 B]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [270 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [2900 B]
+Fetched 14.1 MB in 1min 6s (214 kB/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+All packages are up to date.
+```
+```
+root@4947c063aa53:/# apt install nginx
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+```
+#### nginx 확인
+```
+root@4947c063aa53:/# nginx -v
+nginx version: nginx/1.17.10 (Ubuntu)
+
+```
+
+
 
 ## 5. 간단한 설명, 사용예와 그 결과를 README.md에 넣으시오.
 
